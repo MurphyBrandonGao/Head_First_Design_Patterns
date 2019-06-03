@@ -1,0 +1,33 @@
+package barista;
+
+/**
+ * @author Dell
+ * @create 2019-05-29 19:26
+ */
+public abstract class CaffeineBeverageWithHook {
+
+    final void prepareRecipe() {
+        boilWater();
+        brew();
+        pourInCup();
+        if (customerWantsCondiments()) {
+            addCondiments();
+        }
+    }
+
+    abstract void brew();
+
+    abstract void addCondiments();
+
+    void boilWater() {
+        System.out.println("Boiling water");
+    }
+
+    void pourInCup() {
+        System.out.println("Pouring into cup");
+    }
+
+    boolean customerWantsCondiments() {
+        return true;
+    }
+}
